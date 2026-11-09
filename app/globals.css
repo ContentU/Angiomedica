@@ -1,0 +1,41 @@
+/* Niente preflight di Tailwind: la demo si appoggia agli stili di default del browser. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* CSS della demo copiato così com'è: componenti am-* e stili per pagina (scopati con :where(.pg-…)) */
+@import "./styles/angiomedica.css" layer(components);
+@import "./styles/pages.css" layer(components);
+@import "./styles/site.css" layer(components);
+
+/* Token da Sito web/css/tokens.json */
+@theme {
+  --font-sans: Poppins, system-ui, sans-serif;
+  --color-brick-ember: #cf000a;
+  --color-brilliant-azure: #0187dc;
+  --color-azure-action: #035bdb;
+  --color-azure-hover: #0249b0;
+  --color-azure-pressed: #023f96;
+  --color-azure-ink: #0070b8;
+  --color-deep-blue: #0b3d6b;
+  --color-on-deep-muted: #bfd7ec;
+  --color-shadow-grey: #1a181b;
+  --color-ink-muted: #55535a;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f2f6fa;
+  --color-surface-tint: #e8f2fb;
+  --color-button-secondary: #f6f6f6;
+  --color-hairline: #dce3eb;
+  --color-control-border: #7b8794;
+  --color-outline-azure: #4f8cc4;
+  /* stessi nomi che angiomedica.css legge con var(--radius-*): devono avere i valori dei token */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 24px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+  --shadow-hover: 0 18px 44px rgba(11, 61, 107, 0.10);
+  --shadow-button-hover: 0 6px 16px rgba(26, 24, 27, 0.18);
+  --shadow-panel: 0 24px 60px rgba(4, 22, 40, 0.35);
+  --shadow-bar: 0 -10px 30px rgba(4, 22, 40, 0.18);
+}
