@@ -2,7 +2,7 @@
  * Contenuti iniziali per Sanity.
  * Fonte: «ANGIOMEDICA - Testi sito web - Master editoriale V2» (5/11/2026); dove il Master non dà testo per uno spazio
  * del layout resta il testo della demo approvata. [[testo]] = dato da confermare (sottolineato a puntini sul sito).
- * Testi del Master senza uno spazio nel layout: vedi CONTENUTI-NON-INSERITI.md.
+ * Testi del Master senza uno spazio nel layout: vedi README.md, sezione 5.
  */
 
 type Doc = { _id: string; _type: string; [k: string]: unknown };

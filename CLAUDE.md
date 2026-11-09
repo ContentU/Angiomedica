@@ -23,4 +23,4 @@ Italian-language medical-centre site (Angiomedica): Next.js 15 (App Router) + Re
 ## Notes
 
 - `app/layout.tsx` has `robots: noindex` — remove at launch.
-- Editorial text with no slot in the layout is tracked in `CONTENUTI-NON-INSERITI.md`.
+- Launch checklist (missing content, legal pages, email service, editorial text with no slot in the layout) is in `README.md`.

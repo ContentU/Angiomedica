@@ -26,7 +26,7 @@ export function HomeRequestForm({ options, others, submitLabel = "Invia la richi
       <p hidden><label>Non compilare <input name="bot-field" /></label></p>
       <fieldset className="border-0 m-0 p-0">
         <legend className="p-0 font-[600] text-[20px] max-[960px]:text-[18px]">1. Che visita ti serve?</legend>
-        <div role="radiogroup" aria-label="Visita da richiedere" className="grid grid-cols-[repeat(2,minmax(0,1fr))] gap-[10px] mt-[16px]">
+        <div role="radiogroup" aria-label="Visita da richiedere" className="grid grid-cols-[repeat(2,minmax(0,1fr))] gap-[10px] mt-[16px] max-[960px]:grid-cols-[minmax(0,1fr)]">
           {all.map((o, i) => {
             const on = i === sel;
             return (
@@ -67,7 +67,7 @@ export function HomeRequestForm({ options, others, submitLabel = "Invia la richi
         <input id="f-privacy" name="privacy" value="sì" type="checkbox" required className="w-[22px] h-[22px] m-[2px_0_0] [accent-color:#0187DC] flex-none" />
         <label htmlFor="f-privacy" className="text-[14px] leading-[1.5] text-[#55535A] max-[960px]:text-[13px]">Ho letto l&apos;<a href="#">informativa privacy</a> e acconsento al trattamento dei dati per essere ricontattato. *</label>
       </div>
-      <button className="btn btn-primary w-full" type="submit" disabled={status === "sending"}>{submitLabel}: <span>{label}</span></button>
+      <button className="btn btn-primary w-full" type="submit" disabled={status === "sending"}><span>{submitLabel}: {label}</span></button>
       {status === "sent" || status === "error" ? (
         <p role="status" className={`m-0 text-[15px] text-center ${status === "error" ? "text-[#CF000A]" : "text-[#1A181B]"}`}>{status === "sent" ? SUCCESS : ERROR}</p>
       ) : (

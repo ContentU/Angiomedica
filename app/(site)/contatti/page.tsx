@@ -34,7 +34,7 @@ export default async function Contatti() {
         </div>
       </section>
       <section className="sec pt-[24px]">
-        <div className="wrap cols-r grid-cols-[minmax(0,6fr)_minmax(0,6fr)]">
+        <div className="wrap cols-r grid-cols-[minmax(0,6fr)_minmax(0,6fr)] max-[960px]:grid-cols-[minmax(0,1fr)]">
           <ContactForm heading={<Ph text={mod.heading} />} intro={<InlineText value={mod.body} />} services={services.map((x) => x.shortTitle || x.title)} submitLabel={plain(mod.ctaLabel) || "Invia la richiesta"} ssnNote={<Ph text={mod.label} />} />
           <div>
             <div className="am-photo [aspect-ratio:4_/_3] h-auto rounded-[24px]"><Ph text={p.photoCaption} /></div>

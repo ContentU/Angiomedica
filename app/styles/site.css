@@ -94,3 +94,8 @@
 }
 /* Professionisti mobile: griglia a 2 colonne (mobile/professionisti.html, .g2m) */
 @media (max-width: 960px) { :where(.pg-professionisti) .g3 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+
+/* Il Centro mobile: il titolo del Master è più lungo di quello della demo, a 44px «cardiovascolare» esce dallo schermo */
+@media (max-width: 960px) {
+  :where(.pg-il-centro) .h1 { font-size: 38px !important; }
+}
