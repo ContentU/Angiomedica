@@ -5,3 +5,7 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# Dichiarato esplicitamente: il primo deploy (repo vuoto) non ha agganciato l'adapter in automatico
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
