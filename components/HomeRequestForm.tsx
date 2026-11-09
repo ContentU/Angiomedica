@@ -57,6 +57,7 @@ export function HomeRequestForm({ options, others, submitLabel = "Invia la richi
       </fieldset>
       <fieldset className="border-0 m-[8px_0_0] p-[20px_0_0] [border-top:1px_solid_#DCE3EB] flex flex-col gap-[16px]">
         <legend className="p-0 font-[600] text-[20px] float-left w-full max-[960px]:text-[18px]">2. I tuoi recapiti</legend>
+        <div className="field"><label htmlFor="f-data">Data preferita *</label><input id="f-data" name="data" type="date" required /></div>
         <div className="field"><label htmlFor="f-nome">Nome e cognome *</label><input id="f-nome" name="nome" type="text" autoComplete="name" required /></div>
         <div className="grid grid-cols-[repeat(2,minmax(0,1fr))] gap-[14px] max-[960px]:grid-cols-[minmax(0,1fr)]">
           <div className="field"><label htmlFor="f-tel">Telefono *</label><input id="f-tel" name="telefono" type="tel" autoComplete="tel" required /></div>

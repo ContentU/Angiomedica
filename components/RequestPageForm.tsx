@@ -14,7 +14,7 @@ export function RequestPageForm({ services, doctors, initial, done }: {
 }) {
   const { status, setStatus, onSubmit } = useRequestForm();
   const form = useRef<HTMLFormElement>(null);
-  const [summary, setSummary] = useState({ prest: "", medico: "", contatto: "" });
+  const [summary, setSummary] = useState({ prest: "", medico: "", data: "", contatto: "" });
   const fromService = !!initial;
   const back = services.find((x) => x.name === summary.prest)?.href;
 
@@ -23,7 +23,7 @@ export function RequestPageForm({ services, doctors, initial, done }: {
       <div hidden={status === "sent"}>
         <form ref={form} onSubmit={(e) => {
           const d = new FormData(e.currentTarget);
-          setSummary({ prest: String(d.get("prestazione")), medico: String(d.get("medico")), contatto: String(d.get("contatto")) });
+          setSummary({ prest: String(d.get("prestazione")), medico: String(d.get("medico")), data: new Date(`${d.get("data")}T00:00`).toLocaleDateString("it-IT"), contatto: String(d.get("contatto")) });
           return onSubmit(e);
         }} className="bg-[#FFFFFF] text-[#1A181B] rounded-[28px] p-[40px] flex flex-col gap-[20px] shadow-[0_24px_60px_rgba(4,22,40,.35)] max-[960px]:rounded-[22px] max-[960px]:p-[24px_20px] max-[960px]:gap-[16px]" aria-label="Richiesta visita privata">
           <input type="hidden" name="provenienza" value="richiesta-visita-privata" />
@@ -38,6 +38,7 @@ export function RequestPageForm({ services, doctors, initial, done }: {
           <div className="am-field"><label htmlFor="r-medico">Medico <span className="font-[400] text-[#55535A]">(facoltativo)</span></label>
             <div className="am-select-wrap"><select className="am-select" id="r-medico" name="medico"><option>Nessuna preferenza</option>{doctors.map((x) => <option key={x}>{x}</option>)}</select><Icon name="chevron" size={18} sw={2} stroke="#1A181B" /></div>
           </div>
+          <div className="am-field"><label htmlFor="r-data">Data preferita *</label><input className="am-input" id="r-data" name="data" type="date" required /></div>
           <div className="h-[1px] bg-[#DCE3EB] m-[4px_0]" />
           <div className="am-field"><label htmlFor="r-nome">Nome e cognome *</label><input className="am-input" id="r-nome" name="nome" type="text" autoComplete="name" required /></div>
           <div className="two grid grid-cols-[repeat(2,minmax(0,1fr))] gap-[16px]">
@@ -67,7 +68,7 @@ export function RequestPageForm({ services, doctors, initial, done }: {
           <div className="done-body">{done.body}</div>
           <div className="mt-[28px] pt-[24px] [border-top:1px_solid_#DCE3EB]">
             <p className="m-[0_0_4px] font-[600]">Riepilogo</p>
-            <p className="m-0 text-[#55535A] text-[16px] leading-[1.7]">{summary.prest} · {summary.medico === "Nessuna preferenza" ? "Nessuna preferenza di medico" : summary.medico}<br />Ricontatto per {summary.contatto.toLowerCase()}</p>
+            <p className="m-0 text-[#55535A] text-[16px] leading-[1.7]">{summary.prest} · {summary.medico === "Nessuna preferenza" ? "Nessuna preferenza di medico" : summary.medico}<br />Data preferita: {summary.data}<br />Ricontatto per {summary.contatto.toLowerCase()}</p>
           </div>
           <div className="flex gap-[20px] items-center flex-wrap mt-[28px]">
             {back && <Link className="am-btn am-btn--secondary" href={back}>Torna alla scheda</Link>}{" "}

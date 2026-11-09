@@ -14,6 +14,7 @@ export function ContactForm({ heading, intro, services, submitLabel, ssnNote }: 
       <h2 className="h3 font-[600] text-[26px]">{heading}</h2>
       <p className="muted m-[-8px_0_0] text-[15px]">{intro}</p>
       <div className="am-field"><label htmlFor="c-prest">Prestazione *</label><div className="am-select-wrap"><select className="am-select" id="c-prest" name="prestazione" required defaultValue=""><option value="">Seleziona una prestazione</option>{services.map((x) => <option key={x}>{x}</option>)}</select><Icon name="chevron" size={18} sw={2} stroke="#1A181B" /></div></div>
+      <div className="am-field"><label htmlFor="c-data">Data preferita *</label><input className="am-input" id="c-data" name="data" type="date" required /></div>
       <div className="am-field"><label htmlFor="c-nome">Nome e cognome *</label><input className="am-input" id="c-nome" name="nome" type="text" autoComplete="name" required /></div>
       <div className="g2 gap-[14px]"><div className="am-field"><label htmlFor="c-tel">Telefono *</label><input className="am-input" id="c-tel" name="telefono" type="tel" autoComplete="tel" required /></div><div className="am-field"><label htmlFor="c-mail">Email</label><input className="am-input" id="c-mail" name="email" type="email" autoComplete="email" /></div></div>
       <label className="am-check"><input type="checkbox" name="privacy" value="sì" required /> Ho letto l&apos;informativa privacy e acconsento al trattamento dei dati per essere ricontattato. *</label>{" "}
